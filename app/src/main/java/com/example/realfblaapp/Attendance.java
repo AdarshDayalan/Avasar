@@ -28,7 +28,7 @@ public class Attendance extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.attendance);
+        setContentView(R.layout.attendance_main);
 
         idTxt = findViewById(R.id.studentId);
         load(idTxt);

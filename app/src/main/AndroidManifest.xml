@@ -2,11 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.realfblaapp">
 
-    <uses-permission android:name="android.permission.NFC"/>
-
+    <uses-permission android:name="android.permission.NFC" />
     <uses-permission
         android:name="android.hardware.NFC"
-        android:required="false"/>
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Attendance"></activity>
+        <activity android:name=".About"></activity>
+        <activity android:name=".Contact" />
+        <activity android:name=".Calendar" />
+        <activity android:name=".Attendance" />
         <activity android:name=".Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
