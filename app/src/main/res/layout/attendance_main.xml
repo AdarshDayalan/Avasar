@@ -71,9 +71,23 @@
     <TextView
         android:id="@+id/time"
         android:layout_width="match_parent"
-        android:layout_height="131dp"
+        android:layout_height="wrap_content"
         android:text=""
         android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="300dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/top_button"
+        android:text="Clear ID #"
+        android:textSize="12sp"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
 
 
 </LinearLayout>

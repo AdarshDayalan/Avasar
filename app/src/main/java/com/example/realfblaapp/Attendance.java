@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -34,7 +35,6 @@ public class Attendance extends AppCompatActivity {
         load(idTxt);
 
         NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-
         if(nfcAdapter != null && nfcAdapter.isEnabled()) {
             Toast.makeText(this, "NFC available", Toast.LENGTH_LONG).show();
         }
@@ -42,14 +42,11 @@ public class Attendance extends AppCompatActivity {
             Toast.makeText(this, "NFC is not available", Toast.LENGTH_LONG).show();
         }
 
-
         Button checkInBtn = (Button) findViewById(R.id.checkInButton);
-
         checkInBtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                idTxt = findViewById(R.id.studentId);
-
                if (idTxt != null && idTxt.length() == 6 ) {
                    save(idTxt);
 
@@ -57,16 +54,41 @@ public class Attendance extends AppCompatActivity {
 
                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
                    String currentDateAndTime = sdf.format(new Date());
-                   timeTxt.setText(currentDateAndTime + ", " + idTxt.getText().toString());
-
+                   timeTxt.setText(currentDateAndTime + ", " + idTxt.getText().toString() + ", 0");
                }
                else{
                    Toast.makeText(getApplicationContext(), "Invalid ID number. Try Again", Toast.LENGTH_LONG).show();
                }
-
            }
        });
 
+        Button checkOutBtn = (Button) findViewById(R.id.checkOutButton);
+        checkOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                idTxt = findViewById(R.id.studentId);
+                if (idTxt != null && idTxt.length() == 6 ) {
+                    save(idTxt);
+
+                    TextView timeTxt = findViewById(R.id.time);
+
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+                    String currentDateAndTime = sdf.format(new Date());
+                    timeTxt.setText(currentDateAndTime + ", " + idTxt.getText().toString() + ", 1");
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Invalid ID number. Try Again", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        Button clearBtn = findViewById(R.id.clearBtn);
+        clearBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearFile();
+            }
+        });
     }
 
     public void save(View v) {
@@ -125,4 +147,12 @@ public class Attendance extends AppCompatActivity {
             }
         }
     }
+
+    public void clearFile() {
+        File dir = getFilesDir();
+        File file = new File(dir, FILE_NAME);
+        deleteFile("example.txt");
+        idTxt.setText("");
+    }
+
 }
