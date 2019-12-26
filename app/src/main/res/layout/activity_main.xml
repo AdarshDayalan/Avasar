@@ -4,22 +4,16 @@
     android:layout_height="match_parent"
     android:background="@color/darkBlue">
 
-    <LinearLayout
-        android:orientation="horizontal" android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/white">
-
-        <TextView
-            android:id="@+id/FBLA_Header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FBLA"
-            android:textColor="@color/red"
-            android:textSize="60sp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="115dp"/>
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/FBLA_Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FBLA"
+        android:textColor="@color/red"
+        android:textSize="60sp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:background="@color/white"/>
 
     <TextView
         android:id="@+id/welcome"
