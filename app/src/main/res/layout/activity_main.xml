@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue">
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/FBLA_Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FBLA"
+            android:textColor="@color/red"
+            android:textSize="60sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="115dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:textSize="40sp"
+        android:text="Welcome!"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/welcomeCont"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="30sp"
+        android:text="What would you like to do? "
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/attendanceButton"
+        android:text="Attendance"
+        android:layout_marginTop="40dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@drawable/top_button"
+        />
+
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Calendar"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="@drawable/top_button"
+        />
+
+    <Button
+        android:id="@+id/contactButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Contact"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="@drawable/top_button"
+        />
+
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="About"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="@drawable/top_button"
+        />
+
+</LinearLayout>

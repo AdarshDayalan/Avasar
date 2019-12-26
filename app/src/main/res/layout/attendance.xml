@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue">
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/FBLA_Header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FBLA"
+            android:textColor="@color/red"
+            android:textSize="60sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="115dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Attendance"
+        android:textSize="40sp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:singleLine="false"
+        android:text="Student ID #"
+        android:textAlignment="center"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/checkInButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/top_button"
+        android:text="Check In"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/checkOutButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/top_button"
+        android:text="Check Out"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
