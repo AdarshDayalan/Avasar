@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@color/white"
-        android:layout_gravity="center_horizontal"
         android:src="@mipmap/fbla_image" />
 
     <TextView
@@ -27,15 +26,28 @@
         android:textColor="@color/white"
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
-        android:text="Calendar"
-        android:textSize="40sp">
-    </TextView>
+        android:text="Attendance"
+        android:textSize="40sp"/>
 
-    <CalendarView
-        android:id="@+id/calendarView"
+    <TextView
+        android:id="@+id/textInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_margin="50dp"/>
+        android:textColor="@color/white"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:text="Nfc Recieve"
+        android:textSize="40sp"/>
+    <TextView
+        android:id="@+id/testNfcData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:text=""
+        android:textSize="40sp"/>
 
 </LinearLayout>
