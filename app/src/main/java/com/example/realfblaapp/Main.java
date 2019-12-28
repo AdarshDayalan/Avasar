@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 public class Main extends AppCompatActivity {
@@ -14,7 +16,7 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstancesState);
         setContentView(R.layout.activity_main);
 
-        Button attendanceBtn = findViewById(R.id.attendanceButton);
+        final Button attendanceBtn = findViewById(R.id.attendanceButton);
         attendanceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +47,14 @@ public class Main extends AppCompatActivity {
                 openAboutMain();
             }
         });
+
+        Button nfcReaderBtn = findViewById(R.id.nfcReaderBtn);
+        nfcReaderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNfcMain();
+            }
+        });
     }
 
     public void openAttendanceMain() {
@@ -61,6 +71,10 @@ public class Main extends AppCompatActivity {
     }
     public void openAboutMain() {
         Intent intent = new Intent(this, About.class);
+        startActivity(intent);
+    }
+    public void openNfcMain() {
+        Intent intent = new Intent(this, Nfc.class);
         startActivity(intent);
     }
 }

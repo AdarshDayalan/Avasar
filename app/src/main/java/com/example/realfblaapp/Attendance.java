@@ -2,15 +2,22 @@ package com.example.realfblaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.NfcEvent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,9 +38,16 @@ public class Attendance extends AppCompatActivity
     private static final String FILE_NAME = "example.txt";
     NfcAdapter nfcAdapter;
     EditText idTxt;
-    private String nfcData;
     TextView timeTxt;
+    ImageButton crossImg;
+    ImageButton checkImg;
+    TextView nfcStatus;
+
+    private String nfcData;
     boolean sendData = false;
+    int numOfChar;
+    SimpleDateFormat sdf;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +55,14 @@ public class Attendance extends AppCompatActivity
         setContentView(R.layout.attendance_main);
 
         idTxt = findViewById(R.id.studentId);
+        crossImg = findViewById(R.id.crossImg);
+        checkImg = findViewById(R.id.check);
+        nfcStatus = findViewById(R.id.NfcStatus);
+
         load(idTxt);
+
+        final Button checkOutBtn = (Button) findViewById(R.id.checkOutButton);
+//        final Button clearBtn = findViewById(R.id.clearBtn);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if(nfcAdapter==null){
@@ -49,15 +70,12 @@ public class Attendance extends AppCompatActivity
                     "nfcAdapter==null, no NFC adapter exists",
                     Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(Attendance.this,
-                    "Set Callback(s)",
-                    Toast.LENGTH_LONG).show();
 
                 nfcAdapter.setNdefPushMessageCallback(this, this);
                 nfcAdapter.setOnNdefPushCompleteCallback(this, this);
         }
 
-        Button checkInBtn = (Button) findViewById(R.id.checkInButton);
+        final Button checkInBtn = (Button) findViewById(R.id.checkInButton);
         checkInBtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -66,14 +84,23 @@ public class Attendance extends AppCompatActivity
                    save(idTxt);
                     timeTxt = findViewById(R.id.time);
 
-                   SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+                   sdf = new SimpleDateFormat("HH:mm_MM-dd-yyyy", Locale.getDefault());
                    String currentDateAndTime = sdf.format(new Date());
 
-                   nfcData = currentDateAndTime + ", " + idTxt.getText().toString() + ", 0";
+                   nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")0";
 
                    timeTxt.setText(nfcData);
                    Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
                    sendData = true;
+
+                   Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shrink_anim);
+                   Animation growAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_anim);
+
+                   crossImg.startAnimation(animation);
+                   checkImg.startAnimation(growAnimation);
+
+                   nfcStatus.setText("Nfc Ready");
+
                }
                else{
                    Toast.makeText(getApplicationContext(), "Invalid ID number. Try Again", Toast.LENGTH_LONG).show();
@@ -81,21 +108,30 @@ public class Attendance extends AppCompatActivity
            }
        });
 
-        Button checkOutBtn = (Button) findViewById(R.id.checkOutButton);
         checkOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 idTxt = findViewById(R.id.studentId);
                 if (idTxt != null && idTxt.length() == 6 ) {
                     save(idTxt);
 
                     TextView timeTxt = findViewById(R.id.time);
 
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+                    sdf = new SimpleDateFormat("HH:mm_MM-dd-yyyy", Locale.getDefault());
                     String currentDateAndTime = sdf.format(new Date());
-                    nfcData = currentDateAndTime + ", " + idTxt.getText().toString() + ", 1";
+                    nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")1";
+                    Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
                     timeTxt.setText(nfcData);
                     sendData = true;
+
+                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shrink_anim);
+                    Animation growAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_anim);
+
+                    crossImg.startAnimation(animation);
+                    checkImg.startAnimation(growAnimation);
+
+                    nfcStatus.setText("Nfc Ready");
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Invalid ID number. Try Again", Toast.LENGTH_LONG).show();
@@ -103,14 +139,27 @@ public class Attendance extends AppCompatActivity
             }
         });
 
-        Button clearBtn = findViewById(R.id.clearBtn);
-        clearBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clearFile();
+
+//        clearBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                clearFile();
+//            }
+//        });
+
+        idTxt.addTextChangedListener(new TextWatcher(){
+            public void afterTextChanged(Editable s) {
+                numOfChar = (s.toString().length());
+                if (numOfChar == 6) {
+                    InputMethodManager imm = (InputMethodManager) getApplicationContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(idTxt.getWindowToken(), 0);
+                }
             }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+            public void onTextChanged(CharSequence s, int start, int before, int count){}
         });
     }
+
 
     public void save(View v) {
 
@@ -174,6 +223,20 @@ public class Attendance extends AppCompatActivity
         File file = new File(dir, FILE_NAME);
         deleteFile("example.txt");
         idTxt.setText("");
+        if (timeTxt != null) {
+            timeTxt.setText("");
+        }
+    }
+
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     @Override
@@ -204,7 +267,7 @@ public class Attendance extends AppCompatActivity
     @Override
     public void onNdefPushComplete(NfcEvent event) {
 
-        final String eventString = "onNdefPushComplete\n" + event.toString();
+        final String eventString = "Nfc Data sent!";
         runOnUiThread(new Runnable() {
 
             @Override
@@ -233,5 +296,4 @@ public class Attendance extends AppCompatActivity
         NdefMessage ndefMessageout = new NdefMessage(ndefRecordOut);
         return ndefMessageout;
     }
-
 }

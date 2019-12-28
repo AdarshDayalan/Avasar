@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBlue">
 
@@ -17,17 +19,22 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:textAlignment="center"
-        android:background="@color/white" />
+        android:background="@color/white"
+        android:layout_below="@id/imageView1"
+        android:layout_centerInParent="true"/>
 
 
     <TextView
+        android:id="@+id/attendance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:text="Attendance"
-        android:textSize="40sp">
+        android:textSize="40sp"
+        android:layout_below="@id/filler"
+        android:layout_centerInParent="true">
     </TextView>
 
     <EditText
@@ -39,12 +46,42 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="Enter Student ID"
-        android:textColorHint="@color/white"
         android:inputType="number"
+        android:maxLength="6"
         android:singleLine="false"
         android:text=""
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_below="@id/attendance"
+        android:layout_centerInParent="true"/>
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/check"
+        android:id="@+id/check"
+        android:background="@drawable/top_button"
+        android:tint="@color/white"
+        android:layout_marginTop="490dp"
+        android:layout_below="@id/filler"
+        android:padding="10dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="310dp"/>
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/ic_close_black_24dp"
+        android:id="@+id/crossImg"
+        android:background="@drawable/top_button"
+        android:tint="@color/white"
+        android:layout_marginTop="490dp"
+        android:layout_below="@id/filler"
+        android:padding="10dp"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="310dp"/>
+
 
     <Button
         android:id="@+id/checkInButton"
@@ -55,7 +92,9 @@
         android:background="@drawable/top_button"
         android:text="Check In"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_below="@id/studentId"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/checkOutButton"
@@ -66,28 +105,44 @@
         android:background="@drawable/top_button"
         android:text="Check Out"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:layout_below="@id/checkInButton"
+        android:layout_centerInParent="true"/>
 
     <TextView
         android:id="@+id/time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textColor="@color/white"/>
+        android:text=" "
+        android:textColor="@color/darkBlue"
+        android:layout_below="@id/checkOutButton"/>
 
-    <Button
-        android:id="@+id/clearBtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginHorizontal="300dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/top_button"
-        android:text="Clear ID #"
-        android:textSize="12sp"
+    <TextView
+        android:id="@+id/NfcStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginTop="490dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Nfc not ready"
+        android:textSize="30sp"
+        android:layout_below="@id/filler"
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:layout_centerInParent="true">
+    </TextView>
+
+<!--    <Button-->
+<!--        android:id="@+id/clearBtn"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="600dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:background="@color/darkBlue"-->
+<!--        android:text="Clear ID #"-->
+<!--        android:elevation="0dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/darkBlue"-->
+<!--        android:textSize="12sp" />-->
 
 
-
-</LinearLayout>
+</RelativeLayout>
