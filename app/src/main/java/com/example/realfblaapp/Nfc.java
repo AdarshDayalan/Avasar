@@ -127,7 +127,7 @@ public class Nfc extends Activity
         if (checkBoolean.equals("0")) {
             msg.setText(idNum + " has checked in at " + time);
         } else {
-            msg.setText(idNum + " has checked out " + time);
+            msg.setText(idNum + " has checked out at " + time);
         }
     }
 

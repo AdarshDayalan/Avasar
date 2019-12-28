@@ -59,6 +59,8 @@ public class Attendance extends AppCompatActivity
         checkImg = findViewById(R.id.check);
         nfcStatus = findViewById(R.id.NfcStatus);
 
+        Toast.makeText(getApplicationContext(), "Check In or Out to ready Nfc", Toast.LENGTH_LONG).show();
+
         load(idTxt);
 
         final Button checkOutBtn = (Button) findViewById(R.id.checkOutButton);
@@ -90,7 +92,7 @@ public class Attendance extends AppCompatActivity
                    nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")0";
 
                    timeTxt.setText(nfcData);
-                   Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
+//                   Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
                    sendData = true;
 
                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shrink_anim);
@@ -121,7 +123,7 @@ public class Attendance extends AppCompatActivity
                     sdf = new SimpleDateFormat("HH:mm_MM-dd-yyyy", Locale.getDefault());
                     String currentDateAndTime = sdf.format(new Date());
                     nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")1";
-                    Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
                     timeTxt.setText(nfcData);
                     sendData = true;
 
