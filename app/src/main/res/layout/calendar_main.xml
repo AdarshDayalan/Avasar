@@ -27,7 +27,15 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:text="Calendar"
+
         android:textSize="40sp">
     </TextView>
 
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white" />
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
 </LinearLayout>
