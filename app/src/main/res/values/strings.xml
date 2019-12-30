@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RealFblaApp</string>
+    <string name="Nfc_not_ready">Nfc not ready</string>
 </resources>

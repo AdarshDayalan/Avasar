@@ -1,6 +1,7 @@
 package com.example.realfblaapp;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
@@ -9,6 +10,9 @@ import android.nfc.NfcAdapter.CreateNdefMessageCallback;
 import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Pair;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +23,8 @@ public class Nfc extends Activity
     TextView textOut;
     TextView msg;
 
+    View NfcView;
+
     NfcAdapter nfcAdapter;
 
     @Override
@@ -26,6 +32,15 @@ public class Nfc extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nfc_main);
 
+        final ImageButton backBtn = findViewById(R.id.backBtnNfc);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
+
+        NfcView = findViewById(R.id.nfcHead);
         textInfo = findViewById(R.id.textOut);
         textOut = findViewById(R.id.textInfo);
         msg = findViewById(R.id.msg);
@@ -37,12 +52,13 @@ public class Nfc extends Activity
                     Toast.LENGTH_LONG).show();
         }else{
 
-//            Toast.makeText(Nfc.this,
+//            Toast.makeText(Nfc .this,
 //                    "Set Callback(s)",
 //                    Toast.LENGTH_LONG).show();
             nfcAdapter.setNdefPushMessageCallback(this, this);
             nfcAdapter.setOnNdefPushCompleteCallback(this, this);
         }
+
     }
 
     @Override
@@ -129,6 +145,13 @@ public class Nfc extends Activity
         } else {
             msg.setText(idNum + " has checked out at " + time);
         }
+    }
+
+    public void goBack() {
+        Intent intent = new Intent(this, Main.class);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
+                Pair.create(NfcView, "NfcTxt"));
+        startActivity(intent, options.toBundle());
     }
 
 }

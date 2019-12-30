@@ -49,10 +49,12 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/top_button"
         android:text="Attendance"
+        android:transitionName="AttendanceTxt"
         android:textColor="@color/white"
         android:textSize="20sp" />
     <Button
         android:id="@+id/nfcReaderBtn"
+        android:transitionName="NfcTxt"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -64,16 +66,19 @@
 
     <Button
         android:id="@+id/calendarButton"
+
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="@drawable/top_button"
         android:text="Calendar"
+        android:transitionName="CalendarTxt"
         android:textColor="@color/white"
         android:textSize="15sp" />
 
     <Button
+        android:transitionName="ContactTxt"
         android:id="@+id/contactButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -85,6 +90,7 @@
         android:textSize="15sp" />
 
     <Button
+        android:transitionName="AboutTxt"
         android:id="@+id/aboutButton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"

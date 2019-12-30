@@ -3,6 +3,7 @@ package com.example.realfblaapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
@@ -11,6 +12,7 @@ import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Pair;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -36,18 +38,19 @@ import java.io.InputStreamReader;
 public class Attendance extends AppCompatActivity
         implements NfcAdapter.CreateNdefMessageCallback, NfcAdapter.OnNdefPushCompleteCallback {
     private static final String FILE_NAME = "example.txt";
+
     NfcAdapter nfcAdapter;
     EditText idTxt;
     TextView timeTxt;
     ImageButton crossImg;
     ImageButton checkImg;
     TextView nfcStatus;
+    View attendanceView;
 
     private String nfcData;
     boolean sendData = false;
     int numOfChar;
     SimpleDateFormat sdf;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +60,8 @@ public class Attendance extends AppCompatActivity
         idTxt = findViewById(R.id.studentId);
         crossImg = findViewById(R.id.crossImg);
         checkImg = findViewById(R.id.check);
-        nfcStatus = findViewById(R.id.NfcStatus);
+        nfcStatus = findViewById(R.id.NfcStat);
+        attendanceView = findViewById(R.id.attendance);
 
         Toast.makeText(getApplicationContext(), "Check In or Out to ready Nfc", Toast.LENGTH_LONG).show();
 
@@ -110,6 +114,7 @@ public class Attendance extends AppCompatActivity
            }
        });
 
+
         checkOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,6 +153,14 @@ public class Attendance extends AppCompatActivity
 //                clearFile();
 //            }
 //        });
+
+        final ImageButton backBtn = findViewById(R.id.backBtnAttendance);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
 
         idTxt.addTextChangedListener(new TextWatcher(){
             public void afterTextChanged(Editable s) {
@@ -269,16 +282,16 @@ public class Attendance extends AppCompatActivity
     @Override
     public void onNdefPushComplete(NfcEvent event) {
 
-        final String eventString = "Nfc Data sent!";
-        runOnUiThread(new Runnable() {
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shrink_anim);
+        Animation growAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.grow_anim);
 
-            @Override
-            public void run() {
-                Toast.makeText(getApplicationContext(),
-                        eventString,
-                        Toast.LENGTH_LONG).show();
-            }
-        });
+        crossImg.startAnimation(growAnimation);
+        checkImg.startAnimation(animation);
+
+        final String eventString = "Nfc Data sent!";
+        final String nfcNotSent = "Nfc not ready";
+
+        nfcStatus.setText("Nfc not ready");
 
     }
 
@@ -297,5 +310,13 @@ public class Attendance extends AppCompatActivity
 
         NdefMessage ndefMessageout = new NdefMessage(ndefRecordOut);
         return ndefMessageout;
+    }
+
+    public void goBack() {
+        Intent intent = new Intent(this, Main.class);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
+                Pair.create(attendanceView, "AttendanceTxt"));
+        startActivity(intent, options.toBundle());
     }
 }

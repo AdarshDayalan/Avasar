@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBlue">
 
@@ -22,20 +24,37 @@
 
 
     <TextView
+        android:id="@+id/calendarHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:text="Calendar"
+        android:transitionName="CalendarTxt"
         android:textSize="40sp">
     </TextView>
-
     <CalendarView
-        android:id="@+id/calendarView"
+        android:layout_width="350dp"
+        android:layout_height="310dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:layout_margin="50dp"/>
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/left"
+            android:id="@+id/backBtnCalendar"
+            android:background="@drawable/top_button"
+            android:tint="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="20dp"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
