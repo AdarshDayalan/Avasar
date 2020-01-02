@@ -24,18 +24,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:text="Calendar"
-
         android:textSize="40sp">
     </TextView>
 
     <CalendarView
+
         android:id="@+id/calendarView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@color/white" />
-    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+        android:background="@drawable/rounded"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Sign Up for Competitions"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:onClick="competition"
+        android:background="@drawable/roundedbuttons"
+
+        />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="Sign Up to Volunteer"
+        android:textColor="@color/white"
+        android:onClick="volunteer"
+        android:background="@drawable/roundedbuttons"
+        />
+
 </LinearLayout>

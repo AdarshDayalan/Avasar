@@ -3,9 +3,12 @@ package com.example.realfblaapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+
 
 public class Main extends AppCompatActivity {
 
@@ -23,12 +26,12 @@ public class Main extends AppCompatActivity {
         });
 
         Button calendarBtn = findViewById(R.id.calendarButton);
-//        calendarBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openCalendarMain();
-//            }
-//        });
+        calendarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openCalendarMain();
+            }
+        });
 
         Button contactBtn = findViewById(R.id.contactButton);
         contactBtn.setOnClickListener(new View.OnClickListener() {
@@ -51,10 +54,10 @@ public class Main extends AppCompatActivity {
         Intent intent = new Intent(this, Attendance.class);
         startActivity(intent);
     }
-//    public void openCalendarMain() {
-//        Intent intent = new Intent(this, Calendar.class);
-//        startActivity(intent);
-//    }
+    public void openCalendarMain() {
+        Intent intent = new Intent(this, Calendar.class);
+        startActivity(intent);
+    }
     public void openContactMain() {
         Intent intent = new Intent(this, Contact.class);
         startActivity(intent);
