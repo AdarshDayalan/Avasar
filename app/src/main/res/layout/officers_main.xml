@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/darkBlue">
+
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkBlue">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/white"
+            android:src="@mipmap/fbla_image"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WTHS Officer Information"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:typeface="sans"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Krista Zimmer, President
+zimmerjz@outlook.com
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precious Mago, Media Manager
+pmago0524@gmail.com
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anantya Kasturi, Historian
+Kastu984@wths.net
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Olivia Wong, Reporter
+            Wong902@wths.net
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reena Pinapala, ALM Secretary
+pinap526@wths.net
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grace Liu, OPL Secretary
+            liu215@wths.net
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brian Rapanan, ALM Treasurer
+brapanan23@gmail.com
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kevin Patel, OPL Treasurer
+patel215@wths.net
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sohom Dash, Northern Area &amp; State Parliamentarian
+sohomdash01@gmail.com
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kashyap Ramachandrula, Chapter Parliamentarian
+ramac919@wths.net
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ifra Waris, ALM Bookstore Manager
+ifrawaris@gmail.com
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bharat Pullela, OPL Bookstore Manager
+Pulle656@wths.net
+
+"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:typeface="sans"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+
+            />
+
+
+    </LinearLayout>
+</ScrollView>
