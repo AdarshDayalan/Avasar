@@ -30,6 +30,9 @@
         android:textSize="40sp">
     </TextView>
 
+    android:layout_width="match_parent"
+    android:layout_height=""
+    android:background="@drawable/rounded"
     <CalendarView
 
         android:id="@+id/calendarView"
@@ -45,7 +48,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:layout_gravity="center_horizontal"
-        android:text="Sign Up for Competitions"
+        android:text="Sign Up to Compete"
         android:layout_marginTop="20dp"
         android:textColor="@color/white"
         android:onClick="competition"
