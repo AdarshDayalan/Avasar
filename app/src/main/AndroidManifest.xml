@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/instagram"
+        android:icon="@mipmap/fblaicon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/instagram"
+        android:roundIcon="@mipmap/fblaicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
       

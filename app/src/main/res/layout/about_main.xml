@@ -6,9 +6,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 <LinearLayout
-    android:orientation="vertical" android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBlue">
@@ -37,7 +36,7 @@
         android:layout_gravity="center_horizontal"
         android:text="About"
         android:textSize="40sp"
-        android:id="@+id/aboutButton"/>
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -127,32 +126,18 @@
         android:onClick="instagram"
         android:scaleType="fitXY"
         app:srcCompat="@mipmap/instagram" />
-
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/left"
+        android:id="@+id/backBtnAbout"
+        android:background="@drawable/top_button"
+        android:tint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"/>
 
 
 
 </LinearLayout>
 </ScrollView>
-        android:transitionName="AboutTxt"
-        android:textSize="40sp">
-    </TextView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/left"
-            android:id="@+id/backBtnAbout"
-            android:background="@drawable/top_button"
-            android:tint="@color/white"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="20dp"/>
-
-    </RelativeLayout>
-
-
-</LinearLayout>
