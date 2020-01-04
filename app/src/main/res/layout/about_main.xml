@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -30,6 +36,103 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:text="About"
+        android:textSize="40sp"
+        android:id="@+id/aboutButton"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textFontWeight="@android:integer/status_bar_notification_info_maxnum"
+        android:text="FBLA is the high school division of Future Business Leaders of America-Phi Beta Lambda, Inc. FBLA helps high school students prepare for careers in business through academic competitions (FBLA Competitive Events), leadership development, and educational programs."
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:id="@+id/text"
+        ></TextView>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Local Officers"
+        android:padding="15dp"
+        android:background="@drawable/roundedbuttons"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:onClick="officer"/>
+    <Button
+        android:id="@+id/website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/roundedbuttons"
+        android:textColor="@color/white"
+        android:layout_below="@id/text"
+        android:layout_marginTop="10dp"
+        android:text="FBLA Website"
+        android:onClick="website"/>
+
+    <Button
+        android:id="@+id/join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/roundedbuttons"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_below="@+id/aboutButton"
+        android:layout_marginTop="10dp"
+        android:text="Join FBLA"
+        android:onClick="join"/>
+
+
+    <ImageButton
+        android:id="@+id/facebook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/aboutButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="-70dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/transparent"
+        android:onClick="facebook"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/facebook3" />
+
+    <ImageButton
+        android:id="@+id/twitter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/aboutButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-50dp"
+        android:background="@android:color/transparent"
+        android:onClick="twitter"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/twitter" />
+    <ImageButton
+        android:id="@+id/instagram"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/aboutButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="-50dp"
+        android:background="@android:color/transparent"
+        android:onClick="instagram"
+        android:scaleType="fitXY"
+        app:srcCompat="@mipmap/instagram" />
+
+
+
+
+</LinearLayout>
+</ScrollView>
         android:transitionName="AboutTxt"
         android:textSize="40sp">
     </TextView>

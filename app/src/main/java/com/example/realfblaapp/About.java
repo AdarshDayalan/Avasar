@@ -2,12 +2,15 @@ package com.example.realfblaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Pair;
-import android.view.View;
 import android.widget.ImageButton;
+
 
 public class About extends AppCompatActivity {
 
@@ -29,6 +32,37 @@ public class About extends AppCompatActivity {
         });
     }
 
+    public void facebook(View view){
+    Intent facebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Warren-Township-High-School-FBLA-180628628665646/"));
+    startActivity(facebookIntent);
+
+    }
+    public void twitter(View view){
+        Intent twitterIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/warrenfbla?lang=en/"));
+        startActivity(twitterIntent);
+
+    }
+    public void instagram(View view){
+        Intent instagramIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/warrenfbla/"));
+        startActivity(instagramIntent);
+
+    }
+    public void website(View view){
+        Intent websiteIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.fbla-pbl.org/"));
+        startActivity(websiteIntent);
+
+    }
+    public void join(View view){
+        Intent joinIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSc_GMeDCzFGmfsxtGk7y_mz2mmZpHxwOQipZlvm94KqRSb4HQ/viewform"));
+        startActivity(joinIntent);
+
+    }
+
+    public void officer(View view) {
+        Intent officerIntent = new Intent(this, Officers.class);
+        startActivity(officerIntent);
+    }
+  
     public void goBack() {
         Intent intent = new Intent(this, Main.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
@@ -36,5 +70,6 @@ public class About extends AppCompatActivity {
         startActivity(intent, options.toBundle());
     }
 
-
 }
+
+
