@@ -2,18 +2,22 @@ package com.example.realfblaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import android.util.Pair;
+import android.view.View;
+import android.widget.ImageButton;
 
 public class Contact extends AppCompatActivity {
+    View ContactView;
 
     private Activity activity;
 
@@ -75,7 +79,13 @@ public class Contact extends AppCompatActivity {
                 /* Send it off to the Activity-Chooser */
                 startActivity(Intent.createChooser(sendEmail, "Send mail..."));
 
+        ContactView = findViewById(R.id.contactHead);
 
+        final ImageButton backBtn = findViewById(R.id.backBtnContact);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
             }
         });
     }
@@ -98,8 +108,12 @@ public class Contact extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
 
+    public void goBack() {
+        Intent intent = new Intent(this, Main.class);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
+                Pair.create(ContactView, "ContactTxt"));
+        startActivity(intent, options.toBundle());
     }
-
 
     // validating email id
 
@@ -111,7 +125,6 @@ public class Contact extends AppCompatActivity {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
-
 
 }
 
