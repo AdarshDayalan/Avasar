@@ -8,6 +8,7 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,13 @@ public class Contact extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_main);
+        final ImageButton backBtn = findViewById(R.id.backBtnContact);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
 
         final EditText your_name        = (EditText) findViewById(R.id.your_name);
         final EditText your_email       = (EditText) findViewById(R.id.your_email);

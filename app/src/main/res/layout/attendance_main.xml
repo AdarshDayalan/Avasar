@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue"
+    android:animateLayoutChanges="true">
 
     <ImageView
         android:id="@+id/imageView1"
@@ -91,6 +92,15 @@
         android:textColor="@color/darkBlue"
         android:layout_below="@id/checkOutButton"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="110dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
+
         <TextView
             android:id="@+id/NfcStat"
             android:layout_width="fill_parent"
@@ -102,7 +112,9 @@
             android:shrinkColumns="*">
         </TextView>
 
-
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <ImageButton
                 android:layout_width="40dp"
@@ -122,6 +134,10 @@
                 android:tint="@color/white"
                 android:layout_marginStart="10dp"/>
 
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 
     <ImageButton
@@ -135,17 +151,18 @@
         android:layout_marginBottom="20dp"
         android:layout_marginStart="20dp"/>
 
-<!--    <Button-->
-<!--        android:id="@+id/clearBtn"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginTop="600dp"-->
-<!--        android:layout_marginHorizontal="20dp"-->
-<!--        android:background="@color/darkBlue"-->
-<!--        android:text="Clear ID #"-->
-<!--        android:elevation="0dp"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/darkBlue"-->
-<!--        android:textSize="12sp" />-->
+    <!--    <Button-->
+    <!--        android:id="@+id/clearBtn"-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="600dp"-->
+    <!--        android:layout_marginHorizontal="20dp"-->
+    <!--        android:background="@color/darkBlue"-->
+    <!--        android:text="Clear ID #"-->
+    <!--        android:elevation="0dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="@color/darkBlue"-->
+    <!--        android:textSize="12sp" />-->
 
-</ScrollView>
+
+</RelativeLayout>
