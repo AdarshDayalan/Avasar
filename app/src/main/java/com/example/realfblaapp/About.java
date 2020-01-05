@@ -30,6 +30,14 @@ public class About extends AppCompatActivity {
                 goBack();
             }
         });
+
+        final Button officerBtn = findViewById(R.id.button3);
+        officerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                officer();
+            }
+        });
     }
 
     public void facebook(View view){
@@ -58,7 +66,7 @@ public class About extends AppCompatActivity {
 
     }
 
-    public void officer(View view) {
+    public void officer() {
         Intent officerIntent = new Intent(this, Officers.class);
         startActivity(officerIntent);
     }

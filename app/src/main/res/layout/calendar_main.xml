@@ -3,8 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
         android:orientation="vertical"
@@ -28,12 +29,6 @@
             android:textAlignment="center"
             android:background="@color/white" />
 
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
         <TextView
             android:id="@+id/calendarHead"
             android:layout_width="wrap_content"
@@ -46,17 +41,6 @@
             android:textSize="40sp">
         </TextView>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-
-        </RelativeLayout>
-
-        android:layout_width="match_parent"
-        android:layout_height=""
-        android:background="@drawable/rounded"
         <CalendarView
 
             android:id="@+id/calendarView"
@@ -93,18 +77,21 @@
             android:onClick="volunteer"
             android:background="@drawable/roundedbuttons"
             />
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/left"
-            android:id="@+id/backBtnCalendar"
-            android:background="@drawable/top_button"
-            android:tint="@color/white"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="20dp"/>
 
-
-
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/left"
+                android:id="@+id/backBtnCalendar"
+                android:background="@drawable/top_button"
+                android:tint="@color/white"
+                android:layout_alignParentBottom="true"
+                android:onClick="goBack"
+                />
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>

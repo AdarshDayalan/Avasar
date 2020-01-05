@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:fillViewport="true"
     >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -136,17 +137,22 @@
             android:onClick="sendEmail"
             android:textColor="@android:color/white"
             android:textSize="13sp" />
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/left"
-            android:id="@+id/backBtnContact"
-            android:background="@drawable/top_button"
-            android:tint="@color/white"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="20dp"
-            android:onClick="goBack"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/left"
+                android:id="@+id/backBtnContact"
+                android:background="@drawable/top_button"
+                android:tint="@color/white"
+                android:layout_alignParentBottom="true"
+                android:onClick="goBack"
+                />
+        </RelativeLayout>
 
     </LinearLayout>
 
