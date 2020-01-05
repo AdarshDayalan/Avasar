@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/fblaicon"
+        android:icon="@mipmap/fabyan"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/fblaicon"
+        android:roundIcon="@mipmap/fabyan"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
       
