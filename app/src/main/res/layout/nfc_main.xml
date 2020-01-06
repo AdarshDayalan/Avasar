@@ -75,7 +75,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/top_button2"
+            android:background="@drawable/top_button"
             android:src="@drawable/back2"
             android:tint="@color/white" />
 

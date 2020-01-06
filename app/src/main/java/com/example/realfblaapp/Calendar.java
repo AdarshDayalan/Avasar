@@ -5,22 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.util.Pair;
+import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class Calendar extends AppCompatActivity {
 
-    View CalendarView;
+    View Calendar_View;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_main);
 
-        CalendarView = findViewById(R.id.calendarHead);
+        Calendar_View = findViewById(R.id.calendarHead);
 
         final ImageButton backBtn = findViewById(R.id.backBtnCalendar);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -29,12 +32,20 @@ public class Calendar extends AppCompatActivity {
                 goBack();
             }
         });
+
+//        CalendarView cv = (android.widget.CalendarView) this.findViewById(R.id.calendarView);
+//        ViewGroup vg = (ViewGroup) cv.getChildAt(0);
+//        View child = vg.getChildAt(0);
+//
+//        if(child instanceof TextView) {
+//            ((TextView)child).setTextColor(getResources().getColor(R.color.darkBlue));
+//        }
     }
 
     public void goBack() {
         Intent intent = new Intent(this, Main.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
-                Pair.create(CalendarView, "CalendarTxt"));
+                Pair.create(Calendar_View, "CalendarTxt"));
         startActivity(intent, options.toBundle());
     }
     public void competition(View view){

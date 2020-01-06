@@ -20,6 +20,21 @@
             android:layout_height="90dp"
             android:background="@color/white"
             android:src="@mipmap/fbla_image" />
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Contact Us"
+            android:transitionName="ContactTxt"
+            android:textSize="40sp"
+            android:layout_below="@id/filler"
+            android:layout_centerInParent="true">
+        </TextView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
             android:inputType="text"
-            android:background="@drawable/rounded"
+            android:background="@drawable/top_button2"
             android:singleLine="true"
             android:layout_marginTop="5dp"
             android:textColor="@color/darkBlue"

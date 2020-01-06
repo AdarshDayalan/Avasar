@@ -25,6 +25,9 @@ public class Contact extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_main);
+
+        ContactView = findViewById(R.id.contact);
+
         final ImageButton backBtn = findViewById(R.id.backBtnContact);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

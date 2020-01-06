@@ -109,20 +109,22 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal">
 
-            <TextView
-                android:id="@+id/NfcStat"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:text="@string/Nfc_not_ready"
-                android:textSize="30sp"
-                android:textAlignment="center"
-                android:shrinkColumns="*">
-            </TextView>
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/NfcStat"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="@string/Nfc_not_ready"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:shrinkColumns="*"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="200dp">
+                </TextView>
 
                 <ImageButton
                     android:layout_width="40dp"
@@ -132,7 +134,8 @@
                     android:background="@drawable/top_button"
                     android:tint="@color/white"
                     android:layout_centerInParent="true"
-                    android:layout_alignParentTop="true"/>
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="150dp"/>
 
                 <ImageButton
                     android:layout_width="40dp"
@@ -142,7 +145,8 @@
                     android:background="@drawable/top_button"
                     android:tint="@color/white"
                     android:layout_centerInParent="true"
-                    android:layout_alignParentTop="true"/>
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="150dp"/>
 
                     <ImageButton
                         android:layout_width="50dp"
