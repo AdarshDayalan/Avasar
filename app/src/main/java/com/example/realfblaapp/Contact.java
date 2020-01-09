@@ -82,7 +82,7 @@ public class Contact extends AppCompatActivity {
 
                 /* Fill it with Data */
                 sendEmail.setType("plain/text");
-                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"dr.m.karthiik@gmail.com"});
+                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"svranek@wths.net"});
                 sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
                 sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
                         "name:"+name+'\n'+"Email ID:"+email+'\n'+"Message:"+'\n'+message);

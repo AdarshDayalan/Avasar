@@ -57,6 +57,7 @@
             android:inputType="text"
             android:background="@drawable/top_button2"
             android:singleLine="true"
+            android:padding="10dp"
             android:layout_marginTop="5dp"
             android:textColor="@color/darkBlue"
             android:textSize="14sp" />
