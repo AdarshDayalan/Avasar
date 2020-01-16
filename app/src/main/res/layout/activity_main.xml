@@ -49,20 +49,8 @@
         android:layout_marginTop="30dp"
         android:paddingHorizontal="15dp"
         android:background="@drawable/top_button"
-        android:text="Manual Attendance"
+        android:text="Attendance"
         android:transitionName="AttendanceTxt"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/nfcReaderBtn"
-        android:transitionName="NfcTxt"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/top_button"
-        android:text="Nfc Reader"
         android:textColor="@color/white"
         android:textSize="20sp" />
 

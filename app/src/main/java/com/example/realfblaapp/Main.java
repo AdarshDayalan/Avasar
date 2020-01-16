@@ -19,7 +19,6 @@ public class Main extends AppCompatActivity {
     View attendanceView;
     View CalendarView;
     View AboutView;
-    View NfcView;
     View ContactView;
     View attendanceDataView;
 
@@ -31,7 +30,6 @@ public class Main extends AppCompatActivity {
         CalendarView = findViewById(R.id.calendarButton);
         AboutView= findViewById(R.id.aboutButton);
         ContactView = findViewById(R.id.contactButton);
-        NfcView = findViewById(R.id.nfcReaderBtn);
         attendanceDataView = findViewById(R.id.attendanceDataBtn);
 
         attendanceView.setOnClickListener(new View.OnClickListener() {
@@ -69,16 +67,10 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        NfcView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openNfcMain();
-            }
-        });
     }
 
     public void openAttendanceMain() {
-        Intent intent = new Intent(this, ManualAttendance.class);
+        Intent intent = new Intent(this, Attendance.class);
 
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
                 Pair.create(attendanceView, "AttendanceTxt"));
@@ -109,12 +101,6 @@ public class Main extends AppCompatActivity {
         Intent intent = new Intent(this, About.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
                 Pair.create(AboutView, "AboutTxt"));
-        startActivity(intent, options.toBundle());
-    }
-    public void openNfcMain() {
-        Intent intent = new Intent(this, Nfc.class);
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
-                Pair.create(NfcView, "NfcTxt"));
         startActivity(intent, options.toBundle());
     }
 }
