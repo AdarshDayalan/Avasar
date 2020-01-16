@@ -21,6 +21,7 @@ public class Main extends AppCompatActivity {
     View AboutView;
     View NfcView;
     View ContactView;
+    View attendanceDataView;
 
     protected void onCreate(Bundle savedInstancesState) {
         super.onCreate(savedInstancesState);
@@ -31,6 +32,7 @@ public class Main extends AppCompatActivity {
         AboutView= findViewById(R.id.aboutButton);
         ContactView = findViewById(R.id.contactButton);
         NfcView = findViewById(R.id.nfcReaderBtn);
+        attendanceDataView = findViewById(R.id.attendanceDataBtn);
 
         attendanceView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +62,13 @@ public class Main extends AppCompatActivity {
             }
         });
 
+        attendanceDataView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAttendanceDataMain();
+            }
+        });
+
         NfcView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +84,15 @@ public class Main extends AppCompatActivity {
                 Pair.create(attendanceView, "AttendanceTxt"));
         startActivity(intent, options.toBundle());
     }
+
+    public void openAttendanceDataMain() {
+        Intent intent = new Intent(this, AttendanceData.class);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
+                Pair.create(attendanceDataView, "attendanceDataTxt"));
+        startActivity(intent, options.toBundle());
+    }
+
     public void openCalendarMain() {
         Intent intent = new Intent(this, Calendar.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,

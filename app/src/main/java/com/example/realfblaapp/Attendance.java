@@ -90,7 +90,7 @@ public class Attendance extends AppCompatActivity
                    save(idTxt);
                     timeTxt = findViewById(R.id.time);
 
-                   sdf = new SimpleDateFormat("HH:mm_MM-dd-yyyy", Locale.getDefault());
+                   sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.getDefault());
                    String currentDateAndTime = sdf.format(new Date());
 
                    nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")0";
@@ -125,7 +125,7 @@ public class Attendance extends AppCompatActivity
 
                     TextView timeTxt = findViewById(R.id.time);
 
-                    sdf = new SimpleDateFormat("HH:mm_MM-dd-yyyy", Locale.getDefault());
+                    sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.getDefault());
                     String currentDateAndTime = sdf.format(new Date());
                     nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")1";
 //                    Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();

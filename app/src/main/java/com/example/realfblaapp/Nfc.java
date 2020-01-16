@@ -10,11 +10,20 @@ import android.nfc.NfcAdapter.CreateNdefMessageCallback;
 import android.nfc.NfcEvent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import static android.content.ContentValues.TAG;
 
 public class Nfc extends Activity
         implements CreateNdefMessageCallback, NfcAdapter.OnNdefPushCompleteCallback {
@@ -22,6 +31,8 @@ public class Nfc extends Activity
     TextView textInfo;
     TextView textOut;
     TextView msg;
+
+    DatabaseReference databaseAttendance;
 
     View NfcView;
 
@@ -31,6 +42,8 @@ public class Nfc extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nfc_main);
+
+        databaseAttendance = FirebaseDatabase.getInstance().getReference("AttendanceData");
 
         final ImageButton backBtn = findViewById(R.id.backBtnNfc);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +71,23 @@ public class Nfc extends Activity
             nfcAdapter.setNdefPushMessageCallback(this, this);
             nfcAdapter.setOnNdefPushCompleteCallback(this, this);
         }
+
+        // Read from the database
+//        databaseAttendance.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // This method is called once with the initial value and again
+//                // whenever data at this location is updated.
+//                String value = dataSnapshot.getValue(String.class);
+//                Log.d(TAG, "Value is: " + value);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                // Failed to read value
+//                Log.w(TAG, "Failed to read value.", error.toException());
+//            }
+//        });
 
     }
 
@@ -131,19 +161,18 @@ public class Nfc extends Activity
 
         String idNum = string.substring(0, left);
         String timeDate = sub;
-            int leftTime = timeDate.indexOf("_");
-            int rightTime = timeDate.indexOf("_");
-
-            String time = timeDate.substring(0, leftTime);
-            String Date = timeDate.substring(rightTime+1);
-
         String checkBoolean = string.substring(right+1);
-        Toast.makeText(getApplicationContext(), checkBoolean, Toast.LENGTH_SHORT).show();
+
+        String id = databaseAttendance.push().getKey();
+
+        AttendenceDatabase attendanceDatabase = new AttendenceDatabase(checkBoolean, idNum, timeDate);
+        databaseAttendance.child(id).setValue(attendanceDatabase);
+
 
         if (checkBoolean.equals("0")) {
-            msg.setText(idNum + " has checked in at " + time);
+            msg.setText(idNum + " has checked in at " + timeDate);
         } else {
-            msg.setText(idNum + " has checked out at " + time);
+            msg.setText(idNum + " has checked out at " + timeDate);
         }
     }
 

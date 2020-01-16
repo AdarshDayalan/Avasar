@@ -64,6 +64,7 @@
         android:textColor="@color/white"
         android:textSize="20sp" />
 
+
     <Button
         android:id="@+id/calendarButton"
 
@@ -98,6 +99,19 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/top_button"
         android:text="About"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/attendanceDataBtn"
+        android:transitionName="attendanceDataText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/top_button"
+        android:paddingHorizontal="15dp"
+        android:text="Attendance Data"
         android:textColor="@color/white"
         android:textSize="15sp" />
 

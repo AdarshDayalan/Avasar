@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkBlue"
+        android:animateLayoutChanges="true">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/white"
+            android:src="@mipmap/fbla_image" />
+
+        <TextView
+            android:id="@+id/filler"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:textAlignment="center"
+            android:background="@color/white"
+            android:layout_below="@id/imageView1"
+            android:layout_centerInParent="true"/>
+
+
+        <TextView
+            android:id="@+id/attendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Attendance"
+            android:transitionName="AttendanceTxt"
+            android:textSize="40sp"
+            android:layout_below="@id/filler"
+            android:layout_centerInParent="true">
+        </TextView>
+
+        <EditText
+            android:id="@+id/studentId"
+            android:layout_width="261dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="Enter Student ID"
+            android:inputType="number"
+            android:maxLength="6"
+            android:singleLine="false"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:layout_below="@id/attendance"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/checkInButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/top_button"
+            android:text="Manual Check In"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_below="@id/studentId"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/checkOutButton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/top_button"
+            android:text="Manual Check Out"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_below="@id/checkInButton"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/darkBlue"
+            android:layout_below="@id/checkOutButton"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/left"
+                    android:id="@+id/backBtnAttendance"
+                    android:background="@drawable/top_button"
+                    android:tint="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginStart="20dp"
+                    android:onClick="goBack"/>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
