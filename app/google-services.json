@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "407146281522",
+    "firebase_url": "https://fbla-app-fc3ae.firebaseio.com",
+    "project_id": "fbla-app-fc3ae",
+    "storage_bucket": "fbla-app-fc3ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407146281522:android:42c20b8a768fbc64ed1a2b",
+        "android_client_info": {
+          "package_name": "com.example.realfblaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407146281522-rub5bl3d45ijvmt6aflpt3hvhnihh9ta.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.realfblaapp",
+            "certificate_hash": "30f2f35303b540824a7242f5599f81c5af5b5d60"
+          }
+        },
+        {
+          "client_id": "407146281522-d3gtteguuc2u4odunk56c579cm35qfsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgRUIUis68BPpniSKps-pBpAMAJaxbwWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407146281522-d3gtteguuc2u4odunk56c579cm35qfsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
