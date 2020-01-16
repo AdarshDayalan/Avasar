@@ -21,7 +21,8 @@
             android:layout_height="90dp"
             android:background="@color/white"
             android:layout_gravity="center_horizontal"
-            android:src="@mipmap/top" />
+            android:src="@mipmap/up"
+            android:padding="20dp"/>
 
 
         <TextView

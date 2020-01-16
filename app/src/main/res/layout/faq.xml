@@ -19,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:background="@color/white"
-            android:src="@mipmap/top" />
+            android:src="@mipmap/up"
+            android:padding="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
