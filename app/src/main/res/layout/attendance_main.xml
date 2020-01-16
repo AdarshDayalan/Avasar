@@ -21,16 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:background="@color/white"
-            android:src="@mipmap/fbla_image" />
-
-        <TextView
-            android:id="@+id/filler"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:textAlignment="center"
-            android:background="@color/white"
-            android:layout_below="@id/imageView1"
-            android:layout_centerInParent="true"/>
+            android:src="@mipmap/top" />
 
 
         <TextView
@@ -43,7 +34,7 @@
             android:text="Attendance"
             android:transitionName="AttendanceTxt"
             android:textSize="40sp"
-            android:layout_below="@id/filler"
+            android:layout_below="@id/imageView1"
             android:layout_centerInParent="true">
         </TextView>
 

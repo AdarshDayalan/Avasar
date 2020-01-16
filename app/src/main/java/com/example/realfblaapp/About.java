@@ -38,6 +38,14 @@ public class About extends AppCompatActivity {
                 officer();
             }
         });
+
+        final Button faqBtn = findViewById(R.id.faqButton);
+        faqBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                faq();
+            }
+        });
     }
 
     public void facebook(View view){
@@ -69,6 +77,11 @@ public class About extends AppCompatActivity {
     public void officer() {
         Intent officerIntent = new Intent(this, Officers.class);
         startActivity(officerIntent);
+    }
+
+    public void faq() {
+        Intent faqIntent = new Intent(this, faq.class);
+        startActivity(faqIntent);
     }
   
     public void goBack() {

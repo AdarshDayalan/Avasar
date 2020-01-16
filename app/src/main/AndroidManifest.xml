@@ -8,9 +8,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/avasar"
+        android:icon="@mipmap/ava"
         android:label="Avasar"
-        android:roundIcon="@mipmap/avasar"
+        android:roundIcon="@mipmap/ava"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
       
@@ -25,6 +25,7 @@
         <activity android:name=".About" />
         <activity android:name=".Contact" />
         <activity android:name=".Calendar" />
+        <activity android:name="faq"/>
         <activity android:name=".Attendance" />
         <activity android:name=".Officers" />
         <activity android:name=".Nfc">

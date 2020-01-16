@@ -18,14 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@color/white"
-        android:src="@mipmap/fbla_image" />
+        android:src="@mipmap/top" />
 
-    <TextView
-        android:id="@+id/filler"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:textAlignment="center"
-        android:background="@color/white" />
 
 
     <TextView
@@ -91,6 +85,18 @@
         android:layout_marginTop="20dp"
         android:text="Join FBLA"
         android:onClick="join"/>
+    <Button
+        android:transitionName="AboutTxt"
+        android:id="@+id/faqButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/top_button"
+        android:text="FAQ"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:onClick="faq"/>
 
 
     <ImageButton

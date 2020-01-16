@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:background="@color/white"
-            android:src="@mipmap/fbla_image" />
+            android:src="@mipmap/top" />
 
         <TextView
             android:id="@+id/contact"
@@ -31,7 +31,7 @@
             android:text="Contact Us"
             android:transitionName="ContactTxt"
             android:textSize="40sp"
-            android:layout_below="@id/filler"
+            android:layout_below="@id/imageView1"
             android:layout_centerInParent="true">
         </TextView>
 
@@ -76,6 +76,7 @@
             android:id="@+id/your_email"
             android:layout_height="38dp"
             android:layout_marginTop="5dp"
+            android:padding="10dp"
             android:layout_marginBottom="20dp"
             android:inputType="textEmailAddress"
             android:textColor="@color/darkBlue"
@@ -100,6 +101,8 @@
 
         <EditText
             android:id="@+id/your_subject"
+            android:padding="10dp"
+
             android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
             android:layout_height="38dp"
@@ -125,6 +128,8 @@
         <EditText
             android:id="@+id/your_message"
             android:layout_width="match_parent"
+            android:padding="10dp"
+
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content"
             android:layout_marginLeft="7.5dp"
