@@ -16,6 +16,8 @@ public class About extends AppCompatActivity {
 
     View AboutView;
 
+    //StudentAttendanceApp
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
