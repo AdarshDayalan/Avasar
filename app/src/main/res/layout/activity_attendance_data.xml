@@ -39,7 +39,7 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/backBtnNfc"
+            android:id="@+id/backBtnAttendanceData"
             android:layout_width="50dp"
 
             android:layout_height="50dp"

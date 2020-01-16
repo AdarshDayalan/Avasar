@@ -78,7 +78,7 @@ public class Main extends AppCompatActivity {
     }
 
     public void openAttendanceMain() {
-        Intent intent = new Intent(this, Attendance.class);
+        Intent intent = new Intent(this, ManualAttendance.class);
 
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
                 Pair.create(attendanceView, "AttendanceTxt"));

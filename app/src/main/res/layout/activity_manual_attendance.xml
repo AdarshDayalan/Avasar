@@ -117,7 +117,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     app:srcCompat="@drawable/left"
-                    android:id="@+id/backBtnAttendance"
+                    android:id="@+id/backBtnAttendanceManual"
                     android:background="@drawable/top_button"
                     android:tint="@color/white"
                     android:layout_alignParentBottom="true"

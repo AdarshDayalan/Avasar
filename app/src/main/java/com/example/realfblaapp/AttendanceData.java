@@ -4,8 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,6 +43,14 @@ public class AttendanceData extends AppCompatActivity {
 
         mListView.setAdapter(arrayAdapter);
 
+        final ImageButton backBtn = findViewById(R.id.backBtnAttendanceData);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goBack();
+            }
+        });
+
         databaseAttendance.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -69,5 +82,11 @@ public class AttendanceData extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void goBack() {
+        Intent intent = new Intent(this, Main.class);
+        startActivity(intent);
     }
 }
