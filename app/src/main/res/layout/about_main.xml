@@ -18,8 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="@color/white"
-        android:src="@mipmap/up"
-        android:padding="20dp"/>
+        android:src="@mipmap/fbla_image"
+        android:padding="5dp"/>
 
 
 

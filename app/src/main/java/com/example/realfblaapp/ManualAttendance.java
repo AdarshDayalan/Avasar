@@ -2,13 +2,17 @@ package com.example.realfblaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Pair;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -69,6 +73,18 @@ public class ManualAttendance extends AppCompatActivity {
             public void onClick(View v) {
                 goBack();
             }
+        });
+
+        idTxt.addTextChangedListener(new TextWatcher(){
+            public void afterTextChanged(Editable s) {
+                int numOfChar = (s.toString().length());
+                if (numOfChar == 6) {
+                    InputMethodManager imm = (InputMethodManager) getApplicationContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(idTxt.getWindowToken(), 0);
+                }
+            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+            public void onTextChanged(CharSequence s, int start, int before, int count){}
         });
 
         final Button checkOutBtn = (Button) findViewById(R.id.checkOutButton);
