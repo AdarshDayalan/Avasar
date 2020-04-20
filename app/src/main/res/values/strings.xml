@@ -33,5 +33,7 @@
     <string name="purposeA">A: FBLA-PBL inspires and prepares students to become community-minded business leaders in a global society through relevant career preparation and leadership experiences. (From National FBLA Website)</string>
     <string name="involvedQ">Q: How do I get more involved in FBLA?</string>
     <string name="involvedA">A: Participating in volunteering, doing school-wide fundraising, competing in competitive events, and going to leadership conferences are all great ways to get more involved in the FBLA community.</string>
+    <string name="debugsend">Send Message to Developers</string>
+    <string name="send_message_to_advisors">Send Message to Advisors</string>
 
 </resources>

@@ -93,6 +93,57 @@ public class Contact extends AppCompatActivity {
 
             }
         });
+        Button debug;
+        debug = findViewById(R.id.debug_message);
+        debug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String name      = your_name.getText().toString();
+                String email     = your_email.getText().toString();
+                String subject   = your_subject.getText().toString();
+                String message   = your_message.getText().toString();
+                if (TextUtils.isEmpty(name)){
+                    your_name.setError("Enter Your Name");
+                    your_name.requestFocus();
+                    return;
+                }
+
+                Boolean onError = false;
+                if (!isValidEmail(email)) {
+                    onError = true;
+                    your_email.setError("Invalid Email");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(subject)){
+                    your_subject.setError("Enter Your Subject");
+                    your_subject.requestFocus();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(message)){
+                    your_message.setError("Enter Your Message");
+                    your_message.requestFocus();
+                    return;
+                }
+
+                Intent sendEmail = new Intent(android.content.Intent.ACTION_SEND);
+
+                /* Fill it with Data */
+                sendEmail.setType("plain/text");
+                sendEmail.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"YUVCHAU@GMAIL.COM, ADARSHDAYAL7@GMAIL.COM, Isaac753@wths.net"});
+                sendEmail.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+                sendEmail.putExtra(android.content.Intent.EXTRA_TEXT,
+                        "name:"+name+'\n'+"Email ID:"+email+'\n'+"Message:"+'\n'+message);
+
+                /* Send it off to the Activity-Chooser */
+                startActivity(Intent.createChooser(sendEmail, "Send mail..."));
+
+
+            }
+        });
+
     }
 
     @Override
