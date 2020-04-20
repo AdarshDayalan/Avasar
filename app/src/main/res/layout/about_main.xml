@@ -8,7 +8,6 @@
     android:fillViewport="true">
     <LinearLayout
         android:orientation="vertical"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/darkBlue">
@@ -49,12 +48,24 @@
             android:textSize="20sp"
             android:id="@+id/text">
         </TextView>
-
+        <Button
+            android:transitionName="AboutTxt"
+            android:id="@+id/termbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:padding="15dp"
+            android:background="@drawable/top_button"
+            android:text="Terms and Conditions"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:onClick="term"/>
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="Local Officers"
             android:padding="15dp"
             android:background="@drawable/roundedbuttons"
@@ -86,6 +97,7 @@
             android:layout_marginTop="20dp"
             android:text="Join FBLA"
             android:onClick="join"/>
+
         <Button
             android:transitionName="AboutTxt"
             android:id="@+id/faqButton"
@@ -93,11 +105,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+
             android:background="@drawable/top_button"
             android:text="FAQ"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:onClick="faq"/>
+
+
 
 
         <ImageButton
@@ -152,5 +168,7 @@
                 android:onClick="goBack"
                 />
         </RelativeLayout>
+
+
     </LinearLayout>
 </ScrollView>

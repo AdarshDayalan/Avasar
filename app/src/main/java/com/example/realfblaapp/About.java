@@ -46,11 +46,24 @@ public class About extends AppCompatActivity {
                 faq();
             }
         });
+        final Button termBtn = findViewById(R.id.termbutton);
+        officerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                term(v);
+            }
+        });
+
     }
 
     public void facebook(View view){
     Intent facebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Warren-Township-High-School-FBLA-180628628665646/"));
     startActivity(facebookIntent);
+
+    }
+    public void term(View view){
+        Intent termIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/1k1FpRR4Njb47SRpcjDR6YxT6oSuzMVephge5GwaCpus/edit?usp=sharing"));
+        startActivity(termIntent);
 
     }
     public void twitter(View view){
