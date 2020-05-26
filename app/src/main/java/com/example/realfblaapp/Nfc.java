@@ -65,50 +65,41 @@ public class Nfc extends Activity
                     Toast.LENGTH_LONG).show();
         }else{
 
-//            Toast.makeText(Nfc .this,
-//                    "Set Callback(s)",
-//                    Toast.LENGTH_LONG).show();
             nfcAdapter.setNdefPushMessageCallback(this, this);
             nfcAdapter.setOnNdefPushCompleteCallback(this, this);
         }
 
-        // Read from the database
-//        databaseAttendance.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                // This method is called once with the initial value and again
-//                // whenever data at this location is updated.
-//                String value = dataSnapshot.getValue(String.class);
-//                Log.d(TAG, "Value is: " + value);
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                // Failed to read value
-//                Log.w(TAG, "Failed to read value.", error.toException());
-//            }
-//        });
-
     }
 
+    //Gets NFC Data into parsable String
     @Override
     protected void onResume() {
         super.onResume();
+
+        //Gets NFC Intent
         Intent intent = getIntent();
         String action = intent.getAction();
+
+        //Runs when received NFC data is not Null
         if(action != null) {
+
+            //Checks is received NFC data fits parameters to convert to string
             if (action.equals(NfcAdapter.ACTION_NDEF_DISCOVERED)) {
                 Parcelable[] parcelables =
                         intent.getParcelableArrayExtra(
                                 NfcAdapter.EXTRA_NDEF_MESSAGES);
+
+                //Converts NFC message into string
                 NdefMessage inNdefMessage = (NdefMessage) parcelables[0];
                 NdefRecord[] inNdefRecords = inNdefMessage.getRecords();
                 NdefRecord NdefRecord_0 = inNdefRecords[0];
                 String inMsg = new String(NdefRecord_0.getPayload());
+
+                //Puts up NFC message on screen for confirmation
                 textInfo.setText(inMsg);
-                Toast.makeText(Nfc.this,
-                        inMsg,
-                        Toast.LENGTH_LONG).show();
+                Toast.makeText(Nfc.this, inMsg, Toast.LENGTH_LONG).show();
+
+                //Extracts data from the NFC message for attendance tracking
                 parse(inMsg);
             }
         }
@@ -156,7 +147,7 @@ public class Nfc extends Activity
         int left = string.indexOf("(");
         int right = string.indexOf(")");
 
-// pull out the text inside the parens
+        // Pulls out the text inside the parens
         String sub = string.substring(left+1, right);
 
         String idNum = string.substring(0, left);
@@ -176,6 +167,7 @@ public class Nfc extends Activity
         }
     }
 
+    //Goes Back to NFC Page
     public void goBack() {
         Intent intent = new Intent(this, Main.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
