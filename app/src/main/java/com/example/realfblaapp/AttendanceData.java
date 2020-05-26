@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -54,12 +55,37 @@ public class AttendanceData extends AppCompatActivity {
         databaseAttendance.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                String checkNum = "";
+                String id = "";
+                String time_date = "";
+                int i = 0;
+                for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
+                    if (i == 0) {
+                        checkNum = (String) messageSnapshot.getValue();
+                    } else if (i == 1){
+                        id = (String) messageSnapshot.getValue();
+                    } else {
+                        time_date = (String) messageSnapshot.getValue();
+                    }
+
+                    i++;
+
+//                    Toast.makeText(getApplicationContext(),
+//                            message,
+//                            Toast.LENGTH_LONG).show();
+                }
+
+                if(!id.isEmpty()) {
+                    mFirebaseData.add(id + ", " + time_date + ", " + checkNum);
+                    arrayAdapter.notifyDataSetChanged();
+                }
+
+//                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
 //                mFirebaseData.add(map.toString());
-                mFirebaseData.add(String.valueOf(map.get("attendanceId")) + ", " +
-                        String.valueOf(map.get("attendanceTimeDate")) + ", " +
-                        String.valueOf(map.get("attendanceCheckNum")));
-                arrayAdapter.notifyDataSetChanged();
+//                mFirebaseData.add(String.valueOf(map.get("attendanceId")) + ", " +
+//                        String.valueOf(map.get("attendanceTimeDate")) + ", " +
+//                        String.valueOf(map.get("attendanceCheckNum")));
+//                arrayAdapter.notifyDataSetChanged();
             }
 
             @Override
