@@ -21,8 +21,6 @@
         android:src="@mipmap/fbla_image"
         android:padding="5dp"/>
 
-
-
     <TextView
         android:id="@+id/aboutHead"
         android:layout_width="wrap_content"
