@@ -56,7 +56,7 @@ public class ManualAttendance extends AppCompatActivity {
 
                     nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")0";
 
-                   Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
+                   Toast.makeText(getApplicationContext(), "Successfully checked student in", Toast.LENGTH_LONG).show();
 
                     parse(nfcData);
 
@@ -100,7 +100,7 @@ public class ManualAttendance extends AppCompatActivity {
                     sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss a", Locale.getDefault());
                     String currentDateAndTime = sdf.format(new Date());
                     nfcData = idTxt.getText().toString() +  "(" + currentDateAndTime + ")1";
-                    Toast.makeText(getApplicationContext(), nfcData, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Successfully checked student out", Toast.LENGTH_LONG).show();
                     timeTxt.setText(nfcData);
                     parse(nfcData);
                 }
