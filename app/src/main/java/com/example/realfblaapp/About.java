@@ -19,54 +19,54 @@ public class About extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_main);
+        setContentView(R.layout.about_main);//
 
         AboutView = findViewById(R.id.aboutHead);
 
-        final ImageButton backBtn = findViewById(R.id.backBtnAbout);
+        final ImageButton backBtn = findViewById(R.id.backBtnAbout);//Creates button and binds it to the button found in layout
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goBack();
             }
-        });
+        });//Creates a click listener
 
-        final Button officerBtn = findViewById(R.id.button3);
-        officerBtn.setOnClickListener(new View.OnClickListener() {
+        final Button officerBtn = findViewById(R.id.button3);//Creates button and binds it to the button found in layout
+        officerBtn.setOnClickListener(new View.OnClickListener() {//Creates a click listener
             @Override
             public void onClick(View v) {
-                officer();
+                officer();//Runs the function "officer()"
             }
         });
 
-        final Button faqBtn = findViewById(R.id.faqButton);
+        final Button faqBtn = findViewById(R.id.faqButton);//Creates button and binds it to the button found in layout
         faqBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 faq();
             }
-        });
-        final Button termBtn = findViewById(R.id.termbutton);
+        });//Creates a click listener
+        final Button termBtn = findViewById(R.id.termbutton);//Creates button and binds it to the button found in layout
         officerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 term(v);
             }
-        });
+        });//Creates a click listener
 
     }
 
-    public void facebook(View view){
+    public void facebook(View view){//function "facebook() creates an intent to open the webpage and starts the activity facebookIntent
     Intent facebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Warren-Township-High-School-FBLA-180628628665646/"));
     startActivity(facebookIntent);
 
     }
-    public void term(View view){
+    public void term(View view){//function "term() creates an intent to open the webpage and starts the activity termIntent
         Intent termIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/document/d/1k1FpRR4Njb47SRpcjDR6YxT6oSuzMVephge5GwaCpus/edit?usp=sharing"));
         startActivity(termIntent);
 
     }
-    public void twitter(View view){
+    public void twitter(View view){//function "twitter() creates an intent to open the webpage and starts the activity twitterIntent
         Intent twitterIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/warrenfbla?lang=en/"));
         startActivity(twitterIntent);
 
