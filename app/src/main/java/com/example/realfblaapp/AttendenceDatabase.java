@@ -6,20 +6,20 @@ public class AttendenceDatabase {
     String attendanceCheckNum;
 
     public AttendenceDatabase(String attendanceCheckNum, String attendanceId, String attendanceTimeDate) {
-        this.attendanceId =attendanceId;
+        this.attendanceId = attendanceId;
         this.attendanceTimeDate = attendanceTimeDate;
         this.attendanceCheckNum = attendanceCheckNum;
     }
 
     public String getAttendanceId() {
-        return attendanceId;
+        return this.attendanceId;
     }
 
     public String getAttendanceTimeDate() {
-        return attendanceTimeDate;
+        return this.attendanceTimeDate;
     }
 
     public String getAttendanceCheckNum() {
-        return attendanceCheckNum;
+        return this.attendanceCheckNum;
     }
 }
