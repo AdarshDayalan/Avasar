@@ -15,7 +15,7 @@ import android.widget.Button;
 
 
 public class Main extends AppCompatActivity {
-
+    //Initialized Views
     View attendanceView;
     View CalendarView;
     View AboutView;
@@ -27,6 +27,7 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstancesState);
         setContentView(R.layout.activity_main);
 
+        //Assigned Views to the buttons
         attendanceView = findViewById(R.id.attendanceButton);
         CalendarView = findViewById(R.id.calendarButton);
         AboutView= findViewById(R.id.aboutButton);
@@ -34,6 +35,7 @@ public class Main extends AppCompatActivity {
         NfcView = findViewById(R.id.nfcReaderBtn);
         attendanceDataView = findViewById(R.id.attendanceDataBtn);
 
+        //On Click Listeners for the buttons to open designated their designated class
         attendanceView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,7 @@ public class Main extends AppCompatActivity {
         });
     }
 
+    //Opens Manual Attendance Page
     public void openAttendanceMain() {
         Intent intent = new Intent(this, ManualAttendance.class);
 
@@ -85,6 +88,7 @@ public class Main extends AppCompatActivity {
         startActivity(intent, options.toBundle());
     }
 
+    //Opens Attendance Data Page
     public void openAttendanceDataMain() {
         Intent intent = new Intent(this, AttendanceData.class);
 
@@ -93,24 +97,31 @@ public class Main extends AppCompatActivity {
         startActivity(intent, options.toBundle());
     }
 
+    //Opens Calendar Page
     public void openCalendarMain() {
         Intent intent = new Intent(this, Calendar.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
                 Pair.create(CalendarView, "CalendarTxt"));
         startActivity(intent, options.toBundle());
     }
+
+    //Opens Contact Page
     public void openContactMain() {
         Intent intent = new Intent(this, Contact.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
                 Pair.create(ContactView, "ContactTxt"));
         startActivity(intent, options.toBundle());
     }
+
+    //Opens About Page
     public void openAboutMain() {
         Intent intent = new Intent(this, About.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
                 Pair.create(AboutView, "AboutTxt"));
         startActivity(intent, options.toBundle());
     }
+
+    //Opens NFC Page to show data received
     public void openNfcMain() {
         Intent intent = new Intent(this, Nfc.class);
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
