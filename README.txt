@@ -1,7 +1,7 @@
 AVASAR	VERSION:1.0    	DATE:01/17/2020
 ====================================================================================================================
-AUTHORS: YUVRAJ CHAUHAN, ADARSH DAYALAN, STEVEN ISAAC
-EMAIL: YUVCHAU@GMAIL.COM, ADARSHDAYAL7@GMAIL.COM
+AUTHORS: ADARSH DAYALAN, YUVRAJ CHAUHAN, STEVEN ISAAC
+EMAIL: ADARSHDAYAL7@GMAIL.COM, YUVCHAU@GMAIL.COM
 ====================================================================================================================
 GENERAL USAGE NOTES
 - ALL USERS WILL HAVE DEFAULT SCREENS (HOME PAGE, CALENDAR, CHECK IN, CONTACT, ECT.)
